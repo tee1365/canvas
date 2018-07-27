@@ -6,33 +6,42 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0
-    }
-
-    #canvas {
-      background-color: lightblue;
-      display: block;
-    }
-
-    .actions {
-      position: fixed;
-      left: 10px;
-      bottom: 10px;
-    }
-  </style>
+  <link rel="stylesheet" href="./src/index.css">
 </head>
 
 
 <body>
   <canvas id="canvas" width=400 height=400></canvas>
-  <div class="actions">
-    <button class="eraser">eraser</button>
-    <button class="brush">brush</button>
+  <div class="left-actions">
+    <svg class="icon brush active" aria-hidden="true">
+      <use xlink:href="#icon-brush"></use>
+    </svg>
+    <svg class="icon eraser" aria-hidden="true">
+      <use xlink:href="#icon-eraser"></use>
+    </svg>
+    <button class="color">
+      <svg class="icon color-picker" aria-hidden="true">
+        <use xlink:href="#icon-color-filling"></use>
+      </svg>
+    </button>
   </div>
-  <script src="./index.js"></script>
+  <div class="right-actions">
+    <svg class="icon smaller" aria-hidden="true">
+      <use xlink:href="#icon-smaller"></use>
+    </svg>
+    <svg class="icon larger" aria-hidden="true">
+      <use xlink:href="#icon-larger"></use>
+    </svg>
+    <svg class="icon refresh" aria-hidden="true">
+      <use xlink:href="#icon-refresh"></use>
+    </svg>
+    <svg class="icon download" aria-hidden="true">
+      <use xlink:href="#icon-download"></use>
+    </svg>
+  </div>
+  <script src="https://unpkg.com/vanilla-picker@2"></script>
+  <script src="//at.alicdn.com/t/font_766238_dmkxj6jehs.js"></script>
+  <script src="./src/index.js"></script>
 </body>
 
 </html>

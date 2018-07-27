@@ -1,0 +1,54 @@
+* {
+  margin: 0;
+  padding: 0;
+  user-select: none;
+}
+
+.icon {
+  font-size: 3em;
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.15em;
+  fill: #aaa;
+  overflow: hidden;
+  transition: all 0.3s;
+  margin-right: 20px;
+}
+
+#canvas {
+  display: block;
+}
+
+.left-actions {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  padding: 20px;
+}
+
+.right-actions {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  padding: 20px;
+}
+
+.active {
+  fill: #000;
+  transform: scale(1.2);
+}
+
+.color {
+  border: none;
+  background: transparent;
+  outline: none;
+  transform: scale(1.2);
+}
+
+.color>.icon {
+  fill: #000;
+}
+
+.layout_default {
+  width: 15em !important;
+}
