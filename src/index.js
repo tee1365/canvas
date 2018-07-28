@@ -15,12 +15,14 @@ let defaultWidth = 5;
 
 // import paintingListener from "./paintingListener.js";
 
-context.fillStyle = "#fff";
-context.fillRect(0, 0, canvas.width, canvas.height);
-
 paintingListener();
 buttonListener();
 pickerListener();
+
+context.fillStyle = "#fff";
+context.fillRect(0, 0, canvas.width, canvas.height);
+context.fillStyle = "#000";
+
 
 document.oncontextmenu = e => {
   return false;
