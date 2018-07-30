@@ -13,16 +13,9 @@ let lastPoint = {x: undefined, y: undefined};
 let isErasing = false;
 let defaultWidth = 5;
 
-// import paintingListener from "./paintingListener.js";
-
 paintingListener();
 buttonListener();
 pickerListener();
-
-context.fillStyle = "#fff";
-context.fillRect(0, 0, canvas.width, canvas.height);
-context.fillStyle = "#000";
-
 
 document.oncontextmenu = e => {
   return false;
@@ -34,8 +27,7 @@ function pickerListener() {
     popup: "bottom",
     editor: false,
     alpha: false,
-    color: "#000",
-    layout: "default"
+    color: "#000"
   });
 
   picker.onChange = color => {
@@ -48,6 +40,10 @@ function pickerListener() {
 function paintingListener() {
   canvas.width = document.documentElement.clientWidth;
   canvas.height = document.documentElement.clientHeight;
+
+  context.fillStyle = "#fff";
+  context.fillRect(0, 0, canvas.width, canvas.height);
+  context.fillStyle = "#000";
 
   if (document.body.ontouchstart === undefined) {
     canvas.addEventListener("mousedown", e => {
@@ -115,7 +111,7 @@ function paintingListener() {
     context.arc(x, y, radius, 0, Math.PI * 2);
     context.fill();
     context.closePath();
-    console.log("a");
+    console.log(context.strokeStyle, context.fillStyle);
   }
 
   function drawLine(x1, y1, x2, y2, width) {
